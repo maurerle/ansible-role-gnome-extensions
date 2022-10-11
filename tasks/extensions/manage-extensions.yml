@@ -40,7 +40,7 @@
   when:
     # Translated: when the item is not in the installed list (the directory
     # will always be present by now).
-    - "'State: DISABLED' in register__gnome_extension.info.stdout"
+    #- "'State: DISABLED' in register__gnome_extension.info.stdout"
     - "gnome_extension.installed == 'true'"
   tags:
     - molecule-notest
@@ -51,7 +51,7 @@
     # Translated: when the items is present and installed, and set to 'absent'
     # or 'uninstalled'.
     - "gnome_extension_uuid in register__gnome_extensions.stdout"
-    - "'State: ENABLED' in register__gnome_extension.info.stdout"
+      #- "'State: ENABLED' in register__gnome_extension.info.stdout"
     - "gnome_extension.state == 'absent' or gnome_extension.installed == 'false'"
   tags:
     - molecule-notest

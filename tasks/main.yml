@@ -5,7 +5,11 @@
   ansible.builtin.package: "{{ gnome_extensions }}"
 
 - name: Get the Gnome version.
-  ansible.builtin.command: "gnome-shell --version"
+  ansible.builtin.shell:
+    cmd: |
+      set -o pipefail
+      gnome-shell --version | sed 's/^[^0-9.]*//' | sed 's/[^0-9]*$//'
+    executable: /bin/bash
   register: register__gnome_version
   changed_when: false
 
