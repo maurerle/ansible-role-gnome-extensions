@@ -75,6 +75,17 @@ The following playbook:
     - name: "Include ansible-role-gnome-extensions"
       include_role:
         name: "ansible-role-gnome-extensions"
+      vars:
+        download_only: yes
+
+    - name: "Include ansible-role-gnome-extensions"
+      debug: "logoff and logon or restart gnome-shell to reload extensions"
+
+    - name: "Include ansible-role-gnome-extensions"
+      include_role:
+        name: "ansible-role-gnome-extensions"
+      vars:
+        download_only: no
 ```
 
 ## Testing
