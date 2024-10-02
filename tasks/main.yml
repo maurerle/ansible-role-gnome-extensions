@@ -13,7 +13,7 @@
 - name: Set some initial facts.
   ansible.builtin.set_fact:
     gnome_extensions_dir: "/home/{{ gnome_user }}/.local/share/gnome-shell/extensions/"
-    gnome_version: "{{ register__gnome_version.stdout|regex_search('\\d+\\.\\d+\\.\\d+') }}"
+    gnome_version: "{{ register__gnome_version.stdout|regex_search('\\d+\\.\\d+\\.?\\d?') }}"
 
 - name: Add, remove, install, and uninstall extensions.
   block:
